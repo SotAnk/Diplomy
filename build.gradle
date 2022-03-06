@@ -13,15 +13,15 @@ compileTestJava.options.encoding = "UTF-8"
 
 allure {
     autoconfigure = true
-    version = '2.13.3'
-
+        version = '2.13.6'
     useJUnit5 {
-        version = '2.13.3'
+        version = '2.13.6'
     }
 }
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
@@ -35,6 +35,7 @@ dependencies {
     testImplementation 'commons-dbutils:commons-dbutils:1.7'
     testImplementation group: 'org.postgresql', name: 'postgresql', version: '42.2.14'
     testImplementation 'io.qameta.allure:allure-selenide:2.13.6'
+    testCompile 'ch.qos.logback:logback-classic:1.2.3'
     testImplementation 'com.google.code.gson:gson:2.8.6'
 
 }
