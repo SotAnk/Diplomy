@@ -14,6 +14,7 @@ import ru.netology.page.MainPage;
 import static com.codeborne.selenide.Selenide.open;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DataTest {
     @BeforeAll
