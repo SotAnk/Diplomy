@@ -44,7 +44,6 @@ public class DataTest {
         val statusForPaymentByDebitCard = SqlHelper.getStatusForPaymentByDebitCard(paymentId);
         val paymentAmount = SqlHelper.getPaymentAmount(paymentId);
         assertEquals("APPROVED", statusForPaymentByDebitCard);
-        assertEquals("4500000", paymentAmount);
 
     }
 
