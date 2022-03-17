@@ -89,10 +89,10 @@ public class DataTest {
         val cardData = mainPage.buyByCreditCard();
         val invalidCardInformation = DataHelper.getCardInformationWithWrongLongCardNumber();
         cardData.fillCardInformationForSelectedWay(invalidCardInformation);
-        cardData.checkIfWrongFormatOfField();
+        cardData.checkIfWrongCardNumber();
         val cardData2 = mainPage.buyByDebitCard();
         cardData2.fillCardInformationForSelectedWay(invalidCardInformation);
-        cardData2.checkIfWrongFormatOfField();
+        cardData2.checkIfWrongCardNumber();
     }
 
     @Test
@@ -101,10 +101,10 @@ public class DataTest {
         val cardData = mainPage.buyByCreditCard();
         val invalidCardInformation = DataHelper.getCardInformationWithShortestCardNumber();
         cardData.fillCardInformationForSelectedWay(invalidCardInformation);
-        cardData.checkIfWrongFormatOfField();
+        cardData.checkIfWrongCardNumber();
         val cardData2 = mainPage.buyByDebitCard();
         cardData2.fillCardInformationForSelectedWay(invalidCardInformation);
-        cardData2.checkIfWrongFormatOfField();
+        cardData2.checkIfWrongCardNumber();
     }
 
     @Test
@@ -113,10 +113,10 @@ public class DataTest {
         val cardData = mainPage.buyByCreditCard();
         val invalidCardInformation = DataHelper.getCardInformationWithWrongMonth();
         cardData.fillCardInformationForSelectedWay(invalidCardInformation);
-        cardData.checkIfWrongFormatOfField();
+        cardData.checkIfWrongCardMonth();
         val cardData2 = mainPage.buyByDebitCard();
         cardData2.fillCardInformationForSelectedWay(invalidCardInformation);
-        cardData2.checkIfWrongFormatOfField();
+        cardData2.checkIfWrongCardMonth();
     }
 
     @Test
@@ -125,10 +125,10 @@ public class DataTest {
         val cardData = mainPage.buyByCreditCard();
         val invalidCardInformation = DataHelper.getCardInformationWithWrongYear();
         cardData.fillCardInformationForSelectedWay(invalidCardInformation);
-        cardData.checkIfWrongFormatOfField();
+        cardData.checkIfWrongCardYear();
         val cardData2 = mainPage.buyByDebitCard();
         cardData2.fillCardInformationForSelectedWay(invalidCardInformation);
-        cardData2.checkIfWrongFormatOfField();
+        cardData2.checkIfWrongCardYear();
     }
 
     @Test
@@ -137,10 +137,10 @@ public class DataTest {
         val cardData = mainPage.buyByCreditCard();
         val invalidCardInformation = DataHelper.getCardInformationWithWrongYearWithOneNumber();
         cardData.fillCardInformationForSelectedWay(invalidCardInformation);
-        cardData.checkIfWrongFormatOfField();
+        cardData.checkIfWrongCardYear();
         val cardData2 = mainPage.buyByDebitCard();
         cardData2.fillCardInformationForSelectedWay(invalidCardInformation);
-        cardData2.checkIfWrongFormatOfField();
+        cardData2.checkIfWrongCardYear();
     }
 
     @Test
@@ -149,10 +149,10 @@ public class DataTest {
         val cardData = mainPage.buyByCreditCard();
         val invalidCardInformation = DataHelper.getCardInformationWithWrongCvc();
         cardData.fillCardInformationForSelectedWay(invalidCardInformation);
-        cardData.checkIfWrongFormatOfField();
+        cardData.checkIfWrongCardCode();
         val cardData2 = mainPage.buyByDebitCard();
         cardData2.fillCardInformationForSelectedWay(invalidCardInformation);
-        cardData2.checkIfWrongFormatOfField();
+        cardData2.checkIfWrongCardCode();
     }
 
     @Test
@@ -161,10 +161,10 @@ public class DataTest {
         val cardData = mainPage.buyByCreditCard();
         val invalidCardInformation = DataHelper.getCardInformationWithWrongHolderName();
         cardData.fillCardInformationForSelectedWay(invalidCardInformation);
-        cardData.checkIfWrongFormatOfField();
+        cardData.checkIfWrongCardOwner();
         val cardData2 = mainPage.buyByDebitCard();
         cardData2.fillCardInformationForSelectedWay(invalidCardInformation);
-        cardData2.checkIfWrongFormatOfField();
+        cardData2.checkIfWrongCardOwner();
     }
 
     @Test
@@ -173,9 +173,9 @@ public class DataTest {
         val cardData = mainPage.buyByCreditCard();
         val invalidCardInformation = DataHelper.getCardInformationWithoutName();
         cardData.fillCardInformationForSelectedWay(invalidCardInformation);
-        cardData.checkIfWrongFormatOfField();
+        cardData.checkIfWrongCardOwner();
         val cardData2 = mainPage.buyByDebitCard();
         cardData2.fillCardInformationForSelectedWay(invalidCardInformation);
-        cardData2.checkIfWrongFormatOfField();
+        cardData2.checkIfWrongCardOwner();
     }
 }
