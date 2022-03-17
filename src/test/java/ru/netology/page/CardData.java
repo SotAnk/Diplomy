@@ -9,23 +9,26 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class CardData {
 
-    private SelenideElement cardNumber = $("input[type='text'][placeholder='0000 0000 0000 0000']");
-    private SelenideElement cardMonth = $("input[type='text'][placeholder='08']");
-    private SelenideElement cardYear = $("input[type='text'][placeholder='22']");
-    private SelenideElement cardOwner = $$("form div:nth-child(3) .input__control").first();
-    private SelenideElement cardCode = $("input[type='text'][placeholder='999']");
+    private SelenideElement cardNumberField = $("form div:nth-child(1) .input__control");
+    private SelenideElement cardNumberFieldError = $("form div:nth-child(1) .input__sub");
+    private SelenideElement cardMonthField = $("form div:nth-child(2) > span > span:nth-child(1) .input__control");
+    private SelenideElement cardMonthFieldError = $("form div:nth-child(2) > span > span:nth-child(1) .input__sub");
+    private SelenideElement cardYearField = $("form div:nth-child(2) > span > span:nth-child(2) .input__control");
+    private SelenideElement cardYearFieldError = $("form div:nth-child(2) > span > span:nth-child(2) .input__sub");
+    private SelenideElement cardOwnerField = $("form div:nth-child(3) > span > span:nth-child(1) .input__control");
+    private SelenideElement cardOwnerFieldError = $("form div:nth-child(3) > span > span:nth-child(1) .input__sub");
+    private SelenideElement cardCodeField = $("form div:nth-child(3) > span > span:nth-child(2) .input__control");
+    private SelenideElement cardCodeFieldError = $("form div:nth-child(3) > span > span:nth-child(2) .input__sub");
     private SelenideElement continueButton = $("form div:nth-child(4) .button__content");
     private SelenideElement successNotification = $(".notification_status_ok .notification__content");
     private SelenideElement errorMessage = $(".notification_status_error .notification__content");
-    private SelenideElement wrongFormatNotification = $(".input__sub");
-
 
     public void fillCardInformationForSelectedWay(DataHelper.CardInformation cardInformation) {
-        cardNumber.setValue(cardInformation.getNumber());
-        cardMonth.setValue(cardInformation.getMonth());
-        cardYear.setValue(cardInformation.getYear());
-        cardOwner.setValue(cardInformation.getHolder());
-        cardCode.setValue(cardInformation.getCvc());
+        cardNumberField.setValue(cardInformation.getNumber());
+        cardMonthField.setValue(cardInformation.getMonth());
+        cardYearField.setValue(cardInformation.getYear());
+        cardOwnerField.setValue(cardInformation.getHolder());
+        cardCodeField.setValue(cardInformation.getCvc());
         continueButton.click();
     }
 
@@ -37,8 +40,24 @@ public class CardData {
         errorMessage.waitUntil(Condition.visible, 15000);
     }
 
-    public void checkIfWrongFormatOfField() {
-        wrongFormatNotification.shouldBe(Condition.visible);
+    public void checkIfWrongCardNumber() {
+        cardNumberFieldError.shouldBe(Condition.visible);
+    }
+
+    public void checkIfWrongCardMonth() {
+        cardMonthFieldError.shouldBe(Condition.visible);
+    }
+
+    public void checkIfWrongCardYear() {
+        cardYearFieldError.shouldBe(Condition.visible);
+    }
+
+    public void checkIfWrongCardOwner() {
+        cardOwnerFieldError.shouldBe(Condition.visible);
+    }
+
+    public void checkIfWrongCardCode() {
+        cardCodeFieldError.shouldBe(Condition.visible);
     }
 
 }
