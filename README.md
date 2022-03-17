@@ -27,5 +27,6 @@ Docker;
 
 ### Инструкция по запуску
 
-1. Склонирровать репозиторий;
-2. Запустить контейнер в терминале InteliJ Idea:  docker-compose up -d --force-recreate
+1. Склонирровать репозиторий: git clone https://github.com/SotAnk/Diplomy.git
+2. Открыть в Intellij IDEA
+3. Запустить контейнер в терминале IntelliJ IDEA:  docker-compose up -d --force-recreate
