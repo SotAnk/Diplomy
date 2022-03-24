@@ -14,9 +14,9 @@
 
 [Планирование автоматизации](https://github.com/SotAnk/Diplomy/blob/master/documents/Plan.md)
 
-Отчет по итогам тестирования
+[Отчет по итогам тестирования](https://github.com/SotAnk/Diplomy/blob/master/documents/Report.md)
 
-Отчет по итогам автоматизации
+[Отчет по итогам автоматизации](https://github.com/SotAnk/Diplomy/blob/master/documents/Summary.md)
 
 ### Необходимое ПО
 IntelliJ IDEA;
