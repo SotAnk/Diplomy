@@ -33,20 +33,16 @@ Docker;
 
 **Для работы с базой данных MySQL**
 
-1.Запустить SUT во вкладке Terminal Intellij IDEA командой: `java -jar artifacts/aqa-shop.jar`
+1.Запустить SUT во вкладке Terminal Intellij IDEA командой: `java "-Dspring.datasource.url=jdbc:mysql://localhost:3306/app" -jar artifacts/aqa-shop.jar`
  
-2. Для запуска авто-тестов в Terminal Intellij IDEA ввести команду:  `./gradlew clean test allureReport -Dheadless=true`
+2. Для запуска авто-тестов в Terminal Intellij IDEA ввести команду:  `./gradlew clean test "-Ddb.url=jdbc:mysql://localhost:3306/app"`
 
  **Для работы с базой данных PostgreSQL** 
  
- 1. В файле application.properties закомментировать строку: `#spring.datasource.url=jdbc:mysql://localhost:3306/app`
-
-2.Раскомментировать строку: `spring.datasource.url=jdbc:postgresql://localhost:5432/base_postgresql`
-
-3.запустить SUT командой:  `java -jar artifacts/aqa-shop.jar`
+ 1. Запустить SUT командой:  `java "-Dspring.datasource.url=jdbc:postgresql://localhost:5432/postgres" -jar artifacts/aqa-shop.jar`
 
 4.Для запуска авто-тестов ввести в Terminal Intellij IDEA команду:
-`./gradlew clean test allureReport -Dheadless=true -Ddatasource=jdbc:postgresql://localhost:5432/base_postgresql`
+`./gradlew clean test "-Ddb.url=jdbc:postgresql://localhost:5432/app"`
 
  
 
