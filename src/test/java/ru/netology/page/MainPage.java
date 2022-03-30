@@ -17,10 +17,10 @@ public class MainPage {
         return new CardData();
     }
 
-    public CardData buyByCreditCard() {
+    public CreditData buyByCreditCard() {
         buyByCredit.click();
         nameOfSelectedPayMethod.shouldHave(exactText("Кредит по данным карты"));
-        return new CardData();
+        return new CreditData();
     }
 
 }

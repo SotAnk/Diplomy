@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import lombok.Value;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.Random;
 
@@ -12,11 +13,11 @@ public class DataHelper {
     static Random random = new Random();
     static LocalDate date = LocalDate.now().plusYears(2);
     static LocalDate wrongDate = LocalDate.now().minusYears(1);
-    static String monthNumber = Integer.toString(date.getMonthValue());
+    static String monthNumber = date.format(DateTimeFormatter.ofPattern("MM"));
     static String wrongMonthNumber = Integer.toString(wrongDate.getMonthValue());
     static int cvc = 100 + random.nextInt(999 - 100);
     static String correctCVC = Integer.toString(cvc);
-    static String year = Integer.toString(date.getYear());
+    static String year = date.format(DateTimeFormatter.ofPattern("yy"));
     static String wrongYear = Integer.toString(wrongDate.getYear());
 
     private DataHelper() {
@@ -65,7 +66,7 @@ public class DataHelper {
         return new CardInformation("4444 4444 4444 4441", year, monthNumber, " ", correctCVC);
     }
 
-    @Value
+       @Value
     public static class CardInformation {
         private String number, year, month, holder, cvc;
     }

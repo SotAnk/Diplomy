@@ -4,24 +4,25 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import ru.netology.data.DataHelper;
 
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class CardData {
 
-    private SelenideElement cardNumberField = $("form div:nth-child(1) .input__control");
-    private SelenideElement cardNumberFieldError = $("form div:nth-child(1) .input__sub");
-    private SelenideElement cardMonthField = $("form div:nth-child(2) > span > span:nth-child(1) .input__control");
-    private SelenideElement cardMonthFieldError = $("form div:nth-child(2) > span > span:nth-child(1) .input__sub");
-    private SelenideElement cardYearField = $("form div:nth-child(2) > span > span:nth-child(2) .input__control");
-    private SelenideElement cardYearFieldError = $("form div:nth-child(2) > span > span:nth-child(2) .input__sub");
-    private SelenideElement cardOwnerField = $("form div:nth-child(3) > span > span:nth-child(1) .input__control");
-    private SelenideElement cardOwnerFieldError = $("form div:nth-child(3) > span > span:nth-child(1) .input__sub");
-    private SelenideElement cardCodeField = $("form div:nth-child(3) > span > span:nth-child(2) .input__control");
-    private SelenideElement cardCodeFieldError = $("form div:nth-child(3) > span > span:nth-child(2) .input__sub");
-    private SelenideElement continueButton = $("form div:nth-child(4) .button__content");
-    private SelenideElement successNotification = $(".notification_status_ok .notification__content");
-    private SelenideElement errorMessage = $(".notification_status_error .notification__content");
+    private SelenideElement cardNumberField = $("[placeholder='0000 0000 0000 0000']");
+    private SelenideElement cardNumberFieldError = cardNumberField.parent().parent().$(".input__sub");
+    private SelenideElement cardMonthField = $("input[placeholder='08']");
+    private SelenideElement cardMonthFieldError = $("//*[text()='Месяц']/..//*[@class='input__sub']");
+    private SelenideElement cardYearField = $("input[placeholder='22']");
+    private SelenideElement cardYearFieldError = $("//*[text()='Год']/..//*[@class='input__sub']");
+    private SelenideElement cardOwnerField = $(byText("Владелец")).parent().$("input");
+    private SelenideElement cardOwnerFieldError = $("//*[text()='Владелец']/..//*[@class='input__sub']");
+    private SelenideElement cardCodeField = $("input[placeholder='999']");
+    private SelenideElement cardCodeFieldError = $("//*[text()='CVC/CVV']/..//*[@class='input__sub']");
+    private SelenideElement continueButton = $("form button");
+    private SelenideElement successNotification = $(".notification_status_ok");
+    private SelenideElement errorMessage = $(".notification_status_error");
 
     public void fillCardInformationForSelectedWay(DataHelper.CardInformation cardInformation) {
         cardNumberField.setValue(cardInformation.getNumber());
