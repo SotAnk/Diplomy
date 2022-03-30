@@ -40,7 +40,7 @@ Docker;
 
  **Для работы с базой данных PostgreSQL** 
  
- 1. Запустить SUT командой:  `java "-Dspring.datasource.url=jdbc:postgresql://localhost:5432/postgres" -jar artifacts/aqa-shop.jar``
+ 1. Запустить SUT командой:  `java "-Dspring.datasource.url=jdbc:postgresql://localhost:5432/postgres" -jar artifacts/aqa-shop.jar`
 
 4.Для запуска авто-тестов ввести в Terminal Intellij IDEA команду:
 `./gradlew clean test "-Ddb.url=jdbc:postgresql://localhost:5432/app"`
