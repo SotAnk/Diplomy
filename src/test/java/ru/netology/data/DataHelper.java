@@ -66,7 +66,40 @@ public class DataHelper {
         return new CardInformation("4444 4444 4444 4441", year, monthNumber, " ", correctCVC);
     }
 
-       @Value
+    public static CardInformation getCardInformationWithoutMonth() {
+        return new CardInformation("4444 4444 4444 4441", year," ", faker.name().fullName(), correctCVC);
+    }
+
+    public static CardInformation getCardInformationWithoutYear() {
+        return new CardInformation("4444 4444 4444 4441", " ", monthNumber, faker.name().fullName(), correctCVC);
+    }
+
+    public static CardInformation getCardInformationWithoutCVC() {
+        return new CardInformation("4444 4444 4444 4441", year, monthNumber, faker.name().fullName(), " ");
+    }
+
+    public static CardInformation getCardInformationWithoutNumber() {
+        return new CardInformation(" ", year, monthNumber, faker.name().fullName(), correctCVC);
+    }
+
+    public static CardInformation getCardInformationWithZeroCVC() {
+        return new CardInformation("4444 4444 4444 4441", year, monthNumber, faker.name().fullName(), "000");
+    }
+
+    public static CardInformation getCardInformationWithZeroMonth() {
+        return new CardInformation("4444 4444 4444 4441", year, "00", faker.name().fullName(), correctCVC);
+    }
+
+    public static CardInformation getCardInformationWithZeroYear() {
+        return new CardInformation("4444 4444 4444 4441", "00", monthNumber, faker.name().fullName(), correctCVC);
+    }
+
+    public static CardInformation getCardInformationWithZeroNumber() {
+        return new CardInformation("0000 0000 0000 0000", year, monthNumber, faker.name().fullName(), correctCVC);
+    }
+
+
+    @Value
     public static class CardInformation {
         private String number, year, month, holder, cvc;
     }
