@@ -331,27 +331,27 @@ public class DataTest {
             @Test
             void shouldNotSuccessWithoutNumberDebitCard() {
                 val mainPage = new MainPage();
-                val cardData = mainPage.buyByCreditCard();
+                val cardData2 = mainPage.buyByDebitCard();
                 DataHelper.CardInformation invalidCardInformation = DataHelper.getCardInformationWithoutNumber();
-                cardData.fillCardInformationForSelectedWay(invalidCardInformation);
-                cardData.checkIfWrongCardNumber();
+                cardData2.fillCardInformationForSelectedWay(invalidCardInformation);
+                cardData2.checkIfWrongCardNumber();
 
             }
 
             @Test
             void shouldNotSuccessWithoutMonthDebitCard() {
                 val mainPage = new MainPage();
-                val cardData = mainPage.buyByCreditCard();
+                val cardData2 = mainPage.buyByDebitCard();
                 DataHelper.CardInformation invalidCardInformation = DataHelper.getCardInformationWithoutMonth();
-                cardData.fillCardInformationForSelectedWay(invalidCardInformation);
-                cardData.checkIfWrongCardMonth();
+                cardData2.fillCardInformationForSelectedWay(invalidCardInformation);
+                cardData2.checkIfWrongCardMonth();
 
             }
 
             @Test
             void shouldNotSuccessWithoutYearDebitCard() {
                 val mainPage = new MainPage();
-                val cardData = mainPage.buyByCreditCard();
+                val cardData = mainPage.buyByDebitCard();
                 DataHelper.CardInformation invalidCardInformation = DataHelper.getCardInformationWithoutYear();
                 cardData.fillCardInformationForSelectedWay(invalidCardInformation);
                 cardData.checkIfWrongCardYear();
@@ -361,7 +361,7 @@ public class DataTest {
             @Test
             void shouldNotSuccessWithoutCVCDebitCard() {
                 val mainPage = new MainPage();
-                val cardData = mainPage.buyByCreditCard();
+                val cardData = mainPage.buyByDebitCard();
                 DataHelper.CardInformation invalidCardInformation = DataHelper.getCardInformationWithoutCVC();
                 cardData.fillCardInformationForSelectedWay(invalidCardInformation);
                 cardData.checkIfWrongCardCode();
@@ -371,27 +371,27 @@ public class DataTest {
             @Test
             void shouldNotSuccessWithZeroNumberDebitCard() {
                 val mainPage = new MainPage();
-                val cardData = mainPage.buyByCreditCard();
+                val cardData2 = mainPage.buyByDebitCard();
                 DataHelper.CardInformation invalidCardInformation = DataHelper.getCardInformationWithZeroNumber();
-                cardData.fillCardInformationForSelectedWay(invalidCardInformation);
-                cardData.checkIfWrongCardNumber();
+                cardData2.fillCardInformationForSelectedWay(invalidCardInformation);
+                cardData2. checkIfWrongCardNumber();
 
             }
 
             @Test
             void shouldNotSuccessWithZeroMonthDebitCard() {
                 val mainPage = new MainPage();
-                val cardData = mainPage.buyByCreditCard();
+                val cardData = mainPage.buyByDebitCard();
                 DataHelper.CardInformation invalidCardInformation = DataHelper.getCardInformationWithZeroMonth();
                 cardData.fillCardInformationForSelectedWay(invalidCardInformation);
-                cardData.checkIfWrongCardMonth();
+
 
             }
 
             @Test
             void shouldNotSuccessWithZeroYearDebitCard() {
                 val mainPage = new MainPage();
-                val cardData = mainPage.buyByCreditCard();
+                val cardData = mainPage.buyByDebitCard();
                 DataHelper.CardInformation invalidCardInformation = DataHelper.getCardInformationWithZeroYear();
                 cardData.fillCardInformationForSelectedWay(invalidCardInformation);
                 cardData.checkIfWrongCardYear();
@@ -401,7 +401,7 @@ public class DataTest {
             @Test
             void shouldNotSuccessWithZeroCVCDebitCard() {
                 val mainPage = new MainPage();
-                val cardData = mainPage.buyByCreditCard();
+                val cardData = mainPage.buyByDebitCard();
                 DataHelper.CardInformation invalidCardInformation = DataHelper.getCardInformationWithZeroCVC();
                 cardData.fillCardInformationForSelectedWay(invalidCardInformation);
                 cardData.checkIfWrongCardCode();
