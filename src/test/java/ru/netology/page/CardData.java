@@ -2,6 +2,7 @@ package ru.netology.page;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.By;
 import ru.netology.data.DataHelper;
 
 import static com.codeborne.selenide.Selectors.byText;
@@ -14,8 +15,7 @@ public class CardData {
     private SelenideElement cardNumberField = $("[placeholder='0000 0000 0000 0000']");
     private SelenideElement cardNumberFieldError = cardNumberField.parent().parent().$(".input__sub");
     private SelenideElement cardMonthField = $("input[placeholder='08']");
-    private SelenideElement cardMonthFieldError = $x("//*[text()='Месяц']/..//*[@class='input__sub']");
-    private SelenideElement cardYearField = $("input[placeholder='22']");
+    private SelenideElement cardMonthFieldError = $(By.xpath("//*[text()='Месяц']/..//*[@class='input__sub']"));SelenideElement cardYearField = $("input[placeholder='22']");
     private SelenideElement cardYearFieldError = $x("//*[text()='Год']/..//*[@class='input__sub']");
     private SelenideElement cardOwnerField = $(byText("Владелец")).parent().$("input");
     private SelenideElement cardOwnerFieldError = $x("//*[text()='Владелец']/..//*[@class='input__sub']");
